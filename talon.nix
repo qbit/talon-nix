@@ -34,7 +34,7 @@
 }:
 
 let
-  inherit (lib.importJSON ./src.json) version sha256;
+  inherit (lib.importJSON ./src.json) version;
 
 in
 stdenv.mkDerivation rec {
@@ -43,7 +43,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://talonvoice.com/dl/latest/talon-linux.tar.xz";
-    inherit sha256;
+    sha256 = "sha256-7RLoZeoJQh69dYtJ68E2Xmc5VhuyqzlXsDv95wgc+zQ=";
   };
 
   preferLocalBuild = true;
